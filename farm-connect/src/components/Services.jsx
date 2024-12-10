@@ -73,7 +73,7 @@ const Services = () => {
           <a href="/" className="hover:text-green-200">{text.home}</a>
           <a href="/about" className="hover:text-green-200">{text.about}</a>
           <a href="/services" className="hover:text-green-200">{text.services}</a>
-          <a href="/contact" className="hover:text-green-200">{text.contact}</a>
+          <a href="/contactus" className="hover:text-green-200">{text.contact}</a>
           <button
             onClick={toggleLanguage}
             className="bg-white text-green-600 px-4 py-2 rounded-md hover:bg-green-100 transition"
@@ -109,7 +109,7 @@ const Services = () => {
             <a href="/" className="hover:text-green-300">{text.home}</a>
             <a href="/about" className="hover:text-green-300">{text.about}</a>
             <a href="/services" className="hover:text-green-300">{text.services}</a>
-            <a href="/contact" className="hover:text-green-300">{text.contact}</a>
+            <a href="/contactus" className="hover:text-green-300">{text.contact}</a>
           </div>
           <p className="mb-4">© 2024 Agri Basket. All Rights Reserved.</p>
         </div>

@@ -72,22 +72,35 @@ const FarmConnect = () => {
         
 
         {/* Hero Section */}
-        <section id="home" className="bg-green-100 text-center py-16">
-          <h1 className="text-5xl font-extrabold text-green-900 mb-6" data-translate="Fresh Farm Produce Direct to Your Doorstep">
-            Fresh Farm Produce Direct to Your Doorstep
-          </h1>
-          <p className="text-xl text-green-700 mb-8" data-translate="Supporting Local Farmers, Delivering Quality Produce">
-            Supporting Local Farmers, Delivering Quality Produce
-          </p>
-          <div className="space-x-4">
-            <Link to="/shop" className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition" data-translate="Shop Now">
-              Shop Now
-            </Link>
-            <Link to="/LearnMore" className="bg-white text-green-600 px-8 py-3 rounded-full border-2 border-green-600 hover:bg-green-100 transition" data-translate="Learn More">
-              Learn More
-            </Link>
-          </div>
-        </section>
+        <section
+  id="home"
+  className="relative bg-green-100 text-center py-16 overflow-hidden"
+>
+  <div
+    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-105"
+    style={{
+      backgroundImage: "url('https://www.nicheagriculture.com/wp-content/uploads/2023/09/Are-agriculture-and-farming-the-same-Agriculture-vs-Farming-1024x680.jpg')",
+    }}
+  ></div>
+  <div className="absolute inset-0 bg-green-100 opacity-75"></div>
+  <div className="relative z-10">
+    <h1 className="text-5xl font-extrabold text-green-900 mb-6" data-translate="Fresh Farm Produce Direct to Your Doorstep">
+      Fresh Farm Produce Direct to Your Doorstep
+    </h1>
+    <p className="text-xl text-green-700 mb-8" data-translate="Supporting Local Farmers, Delivering Quality Produce">
+      Supporting Local Farmers, Delivering Quality Produce
+    </p>
+    <div className="space-x-4">
+      <Link to="/shop" className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition" data-translate="Shop Now">
+        Shop Now
+      </Link>
+      <Link to="/LearnMore" className="bg-white text-green-600 px-8 py-3 rounded-full border-2 border-green-600 hover:bg-green-100 transition" data-translate="Learn More">
+        Learn More
+      </Link>
+    </div>
+  </div>
+</section>
+
 
         {/* Product Categories */}
         <section id="products" className="container mx-auto px-4 py-16">

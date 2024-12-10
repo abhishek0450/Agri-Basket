@@ -44,6 +44,9 @@ const ContactUs = () => {
           <Link to="/about" className="hover:text-green-200">
             About
           </Link>
+          <Link to="/services" className="hover:text-green-200">
+            Services
+          </Link>
           <Link to="/contactus" className="hover:text-green-200">
             Contact
           </Link>
