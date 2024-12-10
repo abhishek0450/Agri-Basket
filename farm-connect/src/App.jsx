@@ -9,6 +9,7 @@ import Vegetables from "./components/Vegetables";
 import Fruits from "./components/Fruits";
 import Diary from "./components/Dairy";
 import Shop from "./components/Shop";
+import Services from "./components/Services";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/fruits" element={<Fruits />} />
         <Route path="/dairyproduts" element={<Diary />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
 
     </Router>
