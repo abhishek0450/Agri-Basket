@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const services = [
   {
@@ -70,10 +72,10 @@ const Services = () => {
       {/* Navbar */}
       <nav className="bg-green-600 text-white p-4 shadow-md flex justify-center items-center">
         <div className="flex items-center space-x-6">
-          <a href="/" className="hover:text-green-200">{text.home}</a>
-          <a href="/about" className="hover:text-green-200">{text.about}</a>
-          <a href="/services" className="hover:text-green-200">{text.services}</a>
-          <a href="/contactus" className="hover:text-green-200">{text.contact}</a>
+          <Link to="/" className="hover:text-green-200">{text.home}</Link>
+          <Link to="/about" className="hover:text-green-200">{text.about}</Link>
+          <Link to="/services" className="hover:text-green-200">{text.services}</Link>
+          <Link to="/contactus" className="hover:text-green-200">{text.contact}</Link>
           <button
             onClick={toggleLanguage}
             className="bg-white text-green-600 px-4 py-2 rounded-md hover:bg-green-100 transition"
