@@ -11,11 +11,11 @@ const AboutUs = () => {
     en: {
       title: "About Us",
       tagline: "Empowering Farmers and Businesses through Technology and Innovation",
-      aboutTitle: "About Farm Connect",
+      aboutTitle: "About Agri Basket",
       aboutText1:
-        "Farm Connect is a digital B2B market solution that brings together farmers and industrial buyers. We drive agricultural transactions through our digital platform in combination with our service partnership network. Farm Connect accommodates online payment between buyer & seller, product quality check options, and end-to-end logistic services. Farm Connect is not just a broker; we empower farmers to effortlessly market their crops via our platform.",
+        "Agri Basket is a digital B2B market solution that brings together farmers and industrial buyers. We drive agricultural transactions through our digital platform in combination with our service partnership network. Agri Basket accommodates online payment between buyer & seller, product quality check options, and end-to-end logistic services. Agri Basket is not just a broker; we empower farmers to effortlessly market their crops via our platform.",
       aboutText2:
-        "From our agri-business experience, we understand small farm owners face challenges disproportionate to their size and resources. Technology providers mainly focus on the needs of large enterprises. At Farm Connect, we aim to level the playing field by creating a two-way channel for sellers and buyers to communicate and facilitate buying and selling of their products.",
+        "From our agri-business experience, we understand small farm owners face challenges disproportionate to their size and resources. Technology providers mainly focus on the needs of large enterprises. At Agri Basket, we aim to level the playing field by creating a two-way channel for sellers and buyers to communicate and facilitate buying and selling of their products.",
       visionTitle: "Vision",
       visionText:
         "“To empower FARMERS by delivering TRANSPARENCY and TRACEABILITY in the agri value chain through technology.”",
@@ -113,7 +113,7 @@ const AboutUs = () => {
               Contact
             </a>
           </div>
-          <p className="mb-4">© 2024 Farm Connect. All Rights Reserved.</p>
+          <p className="mb-4">© 2024 Agri Basket. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
