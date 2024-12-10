@@ -21,43 +21,9 @@ const fruits = [
     name: 'Orange',
     price: '$0.80',
     freshness: 5,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Orange-Orange.jpg/800px-Orange-Orange.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJttvKpQEYllL8hilL_PdxM4v8Glnst6iDFg&s',
   },
-  {
-    id: 4,
-    name: 'Grapes',
-    price: '$2.50',
-    freshness: 4,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grapes.jpg/800px-Grapes.jpg',
-  },
-  {
-    id: 5,
-    name: 'Strawberry',
-    price: '$3.00',
-    freshness: 3,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Strawberry.jpg/800px-Strawberry.jpg',
-  },
-  {
-    id: 6,
-    name: 'Pineapple',
-    price: '$2.00',
-    freshness: 6,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pineapple.jpg/800px-Pineapple.jpg',
-  },
-  {
-    id: 7,
-    name: 'Mango',
-    price: '$1.50',
-    freshness: 5,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mango.jpg/800px-Mango.jpg',
-  },
-  {
-    id: 8,
-    name: 'Watermelon',
-    price: '$0.90',
-    freshness: 8,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Watermelon.jpg/800px-Watermelon.jpg',
-  },
+ 
 ];
 
 const Fruits = () => {

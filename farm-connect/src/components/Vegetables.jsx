@@ -21,29 +21,9 @@ const vegetables = [
     name: 'Spinach',
     price: '$1.20',
     freshness: 3,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Spinach_Leaves.jpg/800px-Spinach_Leaves.jpg',
+    image: 'https://www.trustbasket.com/cdn/shop/articles/Spinach.webp?v=1686909241',
   },
-  {
-    id: 4,
-    name: 'Tomato',
-    price: '$0.80',
-    freshness: 4,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Tomato_2010.jpg/800px-Tomato_2010.jpg',
-  },
-  {
-    id: 5,
-    name: 'Cucumber',
-    price: '$1.00',
-    freshness: 6,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Cucumis_sativus_01.jpg/800px-Cucumis_sativus_01.jpg',
-  },
-  {
-    id: 6,
-    name: 'Bell Pepper',
-    price: '$1.75',
-    freshness: 2,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Bell_pepper.jpg/800px-Bell_pepper.jpg',
-  },
+  
 ];
 
 const Vegetables = () => {

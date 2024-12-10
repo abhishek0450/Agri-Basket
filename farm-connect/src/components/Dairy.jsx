@@ -23,27 +23,7 @@ const dairyItems = [
     freshness: 10,
     image: 'https://www.daringgourmet.com/wp-content/uploads/2021/01/How-to-Make-Yogurt-7.jpg',
   },
-  {
-    id: 4,
-    name: 'Butter',
-    price: '$2.00',
-    freshness: 30,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Butter_on_bread.jpg/800px-Butter_on_bread.jpg',
-  },
-  {
-    id: 5,
-    name: 'Cream',
-    price: '$1.80',
-    freshness: 5,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Cream_in_bowl.jpg/800px-Cream_in_bowl.jpg',
-  },
-  {
-    id: 6,
-    name: 'Sour Cream',
-    price: '$1.70',
-    freshness: 7,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sour_cream.jpg/800px-Sour_cream.jpg',
-  },
+  
 ];
 
 const Diary = () => {

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Home, ShoppingCart, Truck } from 'lucide-react';
+
 import { Link } from "react-router-dom";
-import AboutUs from './components/AboutUs';
+
 
 const translations = {
   "Agri Basket": "फार्म कनेक्ट",
@@ -108,7 +108,7 @@ const FarmConnect = () => {
             Our Product Categories
           </h2>
 
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8  sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Fruits Category */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <img 

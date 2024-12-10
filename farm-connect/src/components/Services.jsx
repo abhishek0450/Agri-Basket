@@ -108,10 +108,10 @@ const Services = () => {
       <footer className="bg-green-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center space-x-6 mb-6">
-            <a href="/" className="hover:text-green-300">{text.home}</a>
-            <a href="/about" className="hover:text-green-300">{text.about}</a>
-            <a href="/services" className="hover:text-green-300">{text.services}</a>
-            <a href="/contactus" className="hover:text-green-300">{text.contact}</a>
+            <Link to="/" className="hover:text-green-300">{text.home}</Link>
+            <Link to="/about" className="hover:text-green-300">{text.about}</Link>
+            <Link to="/services" className="hover:text-green-300">{text.services}</Link>
+            <Link to="/contactus" className="hover:text-green-300">{text.contact}</Link>
           </div>
           <p className="mb-4">© 2024 Agri Basket. All Rights Reserved.</p>
         </div>

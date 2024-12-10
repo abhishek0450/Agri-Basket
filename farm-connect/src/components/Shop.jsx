@@ -57,7 +57,7 @@ const Shop = () => {
       name: 'Orange',
       price: '$0.80',
       freshness: 5,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Orange-Orange.jpg/800px-Orange-Orange.jpg',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJttvKpQEYllL8hilL_PdxM4v8Glnst6iDFg&s',
     },
     {
       id: 8,
@@ -65,7 +65,7 @@ const Shop = () => {
       name: 'Yogurt',
       price: '$1.50',
       freshness: 10,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Yogurt_in_bowl.jpg/800px-Yogurt_in_bowl.jpg',
+      image: 'https://www.daringgourmet.com/wp-content/uploads/2021/01/How-to-Make-Yogurt-7.jpg',
     },
     {
       id: 9,
@@ -73,7 +73,7 @@ const Shop = () => {
       name: 'Spinach',
       price: '$1.20',
       freshness: 3,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Spinach.jpg/800px-Spinach.jpg',
+      image: 'https://www.trustbasket.com/cdn/shop/articles/Spinach.webp?v=1686909241',
     },
   ];
 
