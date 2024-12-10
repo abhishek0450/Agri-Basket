@@ -1,12 +1,6 @@
 import { useState } from 'react';
 import { Home, ShoppingCart, Truck } from 'lucide-react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-  useLocation,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import AboutUs from './components/AboutUs';
 
 const translations = {
@@ -48,16 +42,16 @@ const FarmConnect = () => {
   };
 
   return (
-    <Router>
+    
       <div className="bg-green-50 min-h-screen">
         <button
           onClick={handleTranslation}
-          className="fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition"
+          className="fixed top-4 right-4 bg-white text-green-800 px-4 py-1 rounded shadow hover:bg-green-100 transition"
         >
           {isHindi ? "Translate to English" : "Translate to Hindi"}
         </button>
 
-        <nav className="bg-green-600 text-white p-4 flex justify-between items-center shadow-md">
+        {/* <nav className="bg-green-600 text-white p-4 flex justify-between items-center shadow-md">
           <div className="flex items-center space-x-4">
             <Home color="white" size={24} />
             <h1 className="text-2xl font-bold" data-translate="Agri Basket">Agri Basket</h1>
@@ -72,12 +66,26 @@ const FarmConnect = () => {
             <ShoppingCart color="white" size={24} />
             <Truck color="white" size={24} />
           </div>
-        </nav>
+        </nav> */}
 
-        <Routes>
-          <Route path="/about" element={<AboutUs />} />
-          {/* Add other routes here */}
-        </Routes>
+<nav className="bg-green-600 text-white p-4 shadow-md">
+        <div className="flex justify-center space-x-6">
+          <Link to="/" className="hover:text-green-200">
+            Home
+          </Link>
+          <Link to="/about" className="hover:text-green-200">
+            About
+          </Link>
+          <Link to="/services" className="hover:text-green-200">
+            Services
+          </Link>
+          <Link to="/contact" className="hover:text-green-200">
+            Contact
+          </Link>
+        </div>
+      </nav>
+
+        
 
         {/* Hero Section */}
         <section id="home" className="bg-green-100 text-center py-16">
@@ -107,7 +115,7 @@ const FarmConnect = () => {
             {/* Fruits Category */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <img 
-                src="https://media.istockphoto.com/id/870915532/photo/man-holding-crate-ob-fresh-vegetables.jpg?s=612x612&w=0&k=20&c=k2dXOI-wxUy7lX77Pm90vU6TJXmAAv5VtK60ZZHIyCA=" 
+                src="https://assets.cntraveller.in/photos/60ba23b90f3a5367ec9fe85b/16:9/w_960,c_limit/Farm-fresh-produce-1366x768.jpg" 
                 alt="Fresh Fruits" 
                 className="w-full h-64 object-cover"
               />
@@ -185,7 +193,7 @@ const FarmConnect = () => {
         </footer>
         
       </div>
-    </Router>
+    
   );
 };
 
