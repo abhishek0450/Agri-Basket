@@ -80,9 +80,9 @@ const FarmConnect = () => {
             Supporting Local Farmers, Delivering Quality Produce
           </p>
           <div className="space-x-4">
-            <button className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition" data-translate="Shop Now">
+            <Link to="/shop" className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition" data-translate="Shop Now">
               Shop Now
-            </button>
+            </Link>
             <Link to="/LearnMore" className="bg-white text-green-600 px-8 py-3 rounded-full border-2 border-green-600 hover:bg-green-100 transition" data-translate="Learn More">
               Learn More
             </Link>
@@ -110,9 +110,9 @@ const FarmConnect = () => {
                   <li data-translate="🍌 Ripe Bananas - $1.80/kg">🍌 Ripe Bananas - $1.80/kg</li>
                   <li data-translate="🍊 Juicy Oranges - $3.20/kg">🍊 Juicy Oranges - $3.20/kg</li>
                 </ul>
-                <button className="mt-6 w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition" data-translate="View Fruits">
+                <Link to="/fruits" className="mt-6 block text-center  w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition" data-translate="View Fruits">
                   View Fruits
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -130,9 +130,9 @@ const FarmConnect = () => {
                   <li data-translate="🥬 Fresh Spinach - $2.00/bundle">🥬 Fresh Spinach - $2.00/bundle</li>
                   <li data-translate="🍅 Ripe Tomatoes - $1.50/kg">🍅 Ripe Tomatoes - $1.50/kg</li>
                 </ul>
-                <button className="mt-6 w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition" data-translate="View Vegetables">
+                <Link to="/vegetables" className="mt-6 block text-center  w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition" data-translate="View Vegetables">
                   View Vegetables
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -150,9 +150,9 @@ const FarmConnect = () => {
                   <li data-translate="🧀 Artisan Cheese - $6.50/pack">🧀 Artisan Cheese - $6.50/pack</li>
                   <li data-translate="🥣 Fresh Yogurt - $3.20/jar">🥣 Fresh Yogurt - $3.20/jar</li>
                 </ul>
-                <button className="mt-6 w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition" data-translate="View Dairy">
+                <Link to="/dairyproduts" className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition" data-translate="View Dairy">
                   View Dairy
-                </button>
+                </Link>
               </div>
             </div>
           </div>
