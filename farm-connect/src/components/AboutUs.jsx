@@ -1,4 +1,5 @@
 import  { useState } from "react";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const [language, setLanguage] = useState("en");
@@ -45,18 +46,18 @@ const AboutUs = () => {
       {/* Navbar */}
       <nav className="bg-green-600 text-white p-4 shadow-md flex justify-center items-center">
         <div className="flex items-center space-x-6">
-          <a href="#" className="hover:text-green-200">
+          <Link to="/" className="hover:text-green-200">
             Home
-          </a>
-          <a href="#" className="hover:text-green-200">
+          </Link>
+          <Link to="/about" className="hover:text-green-200">
             About
-          </a>
-          <a href="#" className="hover:text-green-200">
+          </Link>
+          <Link to="#" className="hover:text-green-200">
             Services
-          </a>
-          <a href="#" className="hover:text-green-200">
+          </Link>
+          <Link to="#" className="hover:text-green-200">
             Contact
-          </a>
+          </Link>
           <button
             onClick={toggleLanguage}
             className="bg-white text-green-600 px-4 py-2 rounded-md hover:bg-green-100 transition"

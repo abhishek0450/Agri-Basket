@@ -51,22 +51,6 @@ const FarmConnect = () => {
           {isHindi ? "Translate to English" : "Translate to Hindi"}
         </button>
 
-        {/* <nav className="bg-green-600 text-white p-4 flex justify-between items-center shadow-md">
-          <div className="flex items-center space-x-4">
-            <Home color="white" size={24} />
-            <h1 className="text-2xl font-bold" data-translate="Agri Basket">Agri Basket</h1>
-          </div>
-          <div className="space-x-6">
-            <Link to="/" className="hover:text-green-200" data-translate="Home">Home</Link>
-            <Link to="/products" className="hover:text-green-200" data-translate="Products">Products</Link>
-            <Link to="/about" className="hover:text-green-200" data-translate="About">About</Link>
-            <Link to="/contact" className="hover:text-green-200" data-translate="Contact">Contact</Link>
-          </div>
-          <div className="flex items-center space-x-2">
-            <ShoppingCart color="white" size={24} />
-            <Truck color="white" size={24} />
-          </div>
-        </nav> */}
 
 <nav className="bg-green-600 text-white p-4 shadow-md">
         <div className="flex justify-center space-x-6">
