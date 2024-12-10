@@ -52,10 +52,10 @@ const AboutUs = () => {
           <Link to="/about" className="hover:text-green-200">
             About
           </Link>
-          <Link to="#" className="hover:text-green-200">
+          <Link to="/" className="hover:text-green-200">
             Services
           </Link>
-          <Link to="#" className="hover:text-green-200">
+          <Link to="/contactus" className="hover:text-green-200">
             Contact
           </Link>
           <button

@@ -60,10 +60,10 @@ const FarmConnect = () => {
           <Link to="/about" className="hover:text-green-200">
             About
           </Link>
-          <Link to="/services" className="hover:text-green-200">
+          <Link to="/" className="hover:text-green-200">
             Services
           </Link>
-          <Link to="/contact" className="hover:text-green-200">
+          <Link to="/contactus" className="hover:text-green-200">
             Contact
           </Link>
         </div>
@@ -83,9 +83,9 @@ const FarmConnect = () => {
             <button className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition" data-translate="Shop Now">
               Shop Now
             </button>
-            <button className="bg-white text-green-600 px-8 py-3 rounded-full border-2 border-green-600 hover:bg-green-100 transition" data-translate="Learn More">
+            <Link to="/LearnMore" className="bg-white text-green-600 px-8 py-3 rounded-full border-2 border-green-600 hover:bg-green-100 transition" data-translate="Learn More">
               Learn More
-            </button>
+            </Link>
           </div>
         </section>
 
