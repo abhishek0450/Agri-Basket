@@ -8,7 +8,10 @@ const translations = {
   "Home": "होम",
   "Products": "उत्पाद",
   "About": "हमारे बारे में",
+  "About Us": "हमारे बारे में",
   "Contact": "संपर्क करें",
+  "Shop Now": "अभी खरीदें",
+  "Learn More": "और जानें",
   "Fresh Farm Produce Direct to Your Doorstep": "ताजा फार्म उत्पाद सीधे आपके दरवाजे पर",
   "Supporting Local Farmers, Delivering Quality Produce": "स्थानीय किसानों का समर्थन, गुणवत्ता उत्पाद वितरित करना",
   "Quality Guaranteed": "गुणवत्ता की गारंटी",
@@ -24,6 +27,15 @@ const translations = {
   "View Fruits": "फल देखें",
   "View Vegetables": "सब्जियां देखें",
   "View Dairy": "डेयरी देखें",
+  "🍎 Fresh Apples - ₹120/kg" :  "🍎 ताजे सेब - ₹120/kg" ,
+  "🍌 Ripe Bananas - ₹50/kg":  "🍌 पके केले - ₹50/kg" ,
+  "🍊 Juicy Oranges - ₹100/kg" : "🍊 रसदार संतरे - ₹100/kg" ,
+  "🥕 Crisp Carrots - ₹40/kg": "🥕 गाजर - ₹40/kg",
+"🥬 Fresh Spinach - ₹20/bundle": "🥬 ताजा पालक - ₹20/गुच्छा",
+"🍅 Ripe Tomatoes - ₹50/kg": "🍅 पके टमाटर - ₹50/kg",
+"🥛 Raw Milk - ₹40/liter": "🥛 कच्चा दूध - ₹40/लीटर",
+"🧀 Artisan Cheese - ₹30/pack": "🧀 पनीर - ₹30/पैक",
+"🥣 Fresh Yogurt - ₹40/jar": "🥣 ताजा दही - ₹40/जार",
   "© 2024 Agri Basket. All Rights Reserved.": "© 2024 फार्म कनेक्ट। सर्वाधिकार सुरक्षित।",
 };
 
@@ -119,9 +131,9 @@ const FarmConnect = () => {
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-green-800 mb-4" data-translate="Fresh Fruits">Fresh Fruits</h3>
                 <ul className="space-y-2 text-green-700">
-                  <li data-translate="🍎 Fresh Apples - $2.50/kg">🍎 Fresh Apples - $2.50/kg</li>
-                  <li data-translate="🍌 Ripe Bananas - $1.80/kg">🍌 Ripe Bananas - $1.80/kg</li>
-                  <li data-translate="🍊 Juicy Oranges - $3.20/kg">🍊 Juicy Oranges - $3.20/kg</li>
+                  <li data-translate="🍎 Fresh Apples - ₹120/kg">🍎 Fresh Apples - ₹120/kg</li>
+                  <li data-translate="🍌 Ripe Bananas - ₹50/kg">🍌 Ripe Bananas - ₹50/kg</li>
+                  <li data-translate="🍊 Juicy Oranges - ₹100/kg">🍊 Juicy Oranges - ₹100/kg</li>
                 </ul>
                 <Link to="/fruits" className="mt-6 block text-center  w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition" data-translate="View Fruits">
                   View Fruits
@@ -139,9 +151,9 @@ const FarmConnect = () => {
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-green-800 mb-4" data-translate="Fresh Vegetables">Fresh Vegetables</h3>
                 <ul className="space-y-2 text-green-700">
-                  <li data-translate="🥕 Crisp Carrots - $1.80/kg">🥕 Crisp Carrots - $1.80/kg</li>
-                  <li data-translate="🥬 Fresh Spinach - $2.00/bundle">🥬 Fresh Spinach - $2.00/bundle</li>
-                  <li data-translate="🍅 Ripe Tomatoes - $1.50/kg">🍅 Ripe Tomatoes - $1.50/kg</li>
+                  <li data-translate="🥕 Crisp Carrots - ₹40/kg">🥕 Crisp Carrots - ₹40/kg</li>
+                  <li data-translate="🥬 Fresh Spinach - ₹20/bundle">🥬 Fresh Spinach -₹20/bundle</li>
+                  <li data-translate="🍅 Ripe Tomatoes - ₹50/kg">🍅 Ripe Tomatoes - ₹50/kg</li>
                 </ul>
                 <Link to="/vegetables" className="mt-6 block text-center  w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition" data-translate="View Vegetables">
                   View Vegetables
@@ -159,9 +171,9 @@ const FarmConnect = () => {
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-green-800 mb-4" data-translate="Farm Fresh Dairy">Farm Fresh Dairy</h3>
                 <ul className="space-y-2 text-green-700">
-                  <li data-translate="🥛 Raw Milk - $4.00/liter">🥛 Raw Milk - $4.00/liter</li>
-                  <li data-translate="🧀 Artisan Cheese - $6.50/pack">🧀 Artisan Cheese - $6.50/pack</li>
-                  <li data-translate="🥣 Fresh Yogurt - $3.20/jar">🥣 Fresh Yogurt - $3.20/jar</li>
+                  <li data-translate="🥛 Raw Milk - ₹40/liter">🥛 Raw Milk - ₹40/liter</li>
+                  <li data-translate="🧀 Artisan Cheese - ₹30/pack">🧀 Artisan Cheese - ₹30/pack</li>
+                  <li data-translate="🥣 Fresh Yogurt - ₹40/jar">🥣 Fresh Yogurt - ₹40/jar</li>
                 </ul>
                 <Link to="/dairyproduts" className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition" data-translate="View Dairy">
                   View Dairy
