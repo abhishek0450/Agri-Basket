@@ -122,6 +122,9 @@ const Shop = () => {
             <h3 className="text-lg font-semibold">{item.name}</h3>
             <p className="text-gray-700">Price: {item.price}</p>
             <p className="text-gray-700">Freshness: {item.freshness} days</p>
+            <button  className="mt-6 block text-center  w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition" data-translate="View Fruits">
+                  Buy
+                </button>
           </div>
         ))}
       </div>
