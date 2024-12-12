@@ -1,12 +1,14 @@
 import { useState } from 'react';
-
+import logo from './assets/vegetables.png';
+import { Languages ,Menu, X } from 'lucide-react';
 import { Link } from "react-router-dom";
 
 
 const translations = {
   "Agri Basket": "फार्म कनेक्ट",
   "Home": "होम",
-  "Products": "उत्पाद",
+  
+  "Services": "सेवाएं",
   "About": "हमारे बारे में",
   "About Us": "हमारे बारे में",
   "Contact": "संपर्क करें",
@@ -27,6 +29,7 @@ const translations = {
   "View Fruits": "फल देखें",
   "View Vegetables": "सब्जियां देखें",
   "View Dairy": "डेयरी देखें",
+  "Read in Hindi": "हिंदी में पढ़ें",
   "🍎 Fresh Apples - ₹120/kg" :  "🍎 ताजे सेब - ₹120/kg" ,
   "🍌 Ripe Bananas - ₹50/kg":  "🍌 पके केले - ₹50/kg" ,
   "🍊 Juicy Oranges - ₹100/kg" : "🍊 रसदार संतरे - ₹100/kg" ,
@@ -43,43 +46,152 @@ const translations = {
 
 const FarmConnect = () => {
   const [isHindi, setIsHindi] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const handleTranslation = () => {
-    setIsHindi(!isHindi);
+    const newLanguageState = !isHindi;
+    setIsHindi(newLanguageState);
+
+    // Update all elements with data-translate attribute
     const elements = document.querySelectorAll('[data-translate]');
     elements.forEach((el) => {
       const key = el.getAttribute('data-translate');
-      el.textContent = isHindi ? key : translations[key] || key;
+      el.textContent = newLanguageState 
+        ? (translations[key] || key)
+        : key;
     });
+  };
+
+  // Translation helper function
+  const translate = (key) => {
+    return isHindi ? (translations[key] || key) : key;
   };
 
   return (
     
       <div className="bg-green-50 min-h-screen">
-        <button
-          onClick={handleTranslation}
-          className="fixed top-4 right-4 bg-white text-green-800 px-4 py-1 rounded shadow hover:bg-green-100 transition"
-        >
-          {isHindi ? "Translate to English" : "Translate to Hindi"}
-        </button>
-
-
-<nav className="bg-green-600 text-white p-4 shadow-md">
-        <div className="flex justify-center space-x-6">
-          <Link to="/" className="hover:text-green-200">
-            Home
-          </Link>
-          <Link to="/about" className="hover:text-green-200">
-            About
-          </Link>
-          <Link to="/services" className="hover:text-green-200">
-            Services
-          </Link>
-          <Link to="/contactus" className="hover:text-green-200">
-            Contact
-          </Link>
+       <nav className="bg-green-600 text-white p-4 shadow-md relative">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Logo and Name */}
+        <div className="flex items-center space-x-3">
+          <img 
+            src={logo} 
+            alt="Farm Connect Logo" 
+            className="h-10 w-10 shadow-2xl rounded"
+          />
+          <span 
+            data-translate="Agri Basket" 
+            className="text-2xl font-bold"
+          >
+            {translate("Agri Basket")}
+          </span>
         </div>
-      </nav>
+
+        {/* Hamburger Menu for Mobile */}
+        <div className="md:hidden flex items-center space-x-4">
+          {/* Translation Button */}
+          <button 
+            onClick={handleTranslation}
+            className="bg-white text-green-800 px-2 py-1 rounded shadow hover:bg-green-100 transition"
+          >
+            <Languages />
+          </button>
+
+          {/* Hamburger Button */}
+          <button 
+            onClick={toggleMenu} 
+            className="focus:outline-none"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex items-center space-x-6">
+          <Link 
+            to="/" 
+            data-translate="Home" 
+            className="hover:text-green-200"
+          >
+            {translate("Home")}
+          </Link>
+          <Link 
+            to="/services" 
+            data-translate="services" 
+            className="hover:text-green-200"
+          >
+            {translate("Services")}
+          </Link>
+          <Link 
+            to="/about" 
+            data-translate="About" 
+            className="hover:text-green-200"
+          >
+            {translate("About Us")}
+          </Link>
+          <Link 
+            to="/contactus" 
+            data-translate="Contact" 
+            className="hover:text-green-200"
+          >
+            {translate("Contact")}
+          </Link>
+
+          {/* Translation Button for Desktop */}
+          <button
+            onClick={handleTranslation}
+            className="bg-white text-green-800 px-4 py-1 rounded shadow hover:bg-green-100 transition flex items-center space-x-2"
+          >
+            <Languages />
+            <span>{isHindi ? "English" : "हिंदी"}</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 w-full bg-green-600 md:hidden z-50">
+          <div className="flex flex-col items-center space-y-4 py-4">
+            <Link 
+              to="/" 
+              data-translate="Home"
+              className="hover:text-green-200"
+              onClick={toggleMenu}
+            >
+              {translate("Home")}
+            </Link>
+            <Link 
+              to="/services" 
+              data-translate="Services"
+              className="hover:text-green-200"
+              onClick={toggleMenu}
+            >
+              {translate("/services")}
+            </Link>
+            <Link 
+              to="/about" 
+              data-translate="About Us"
+              className="hover:text-green-200"
+              onClick={toggleMenu}
+            >
+              {translate("About Us")}
+            </Link>
+            <Link 
+              to="/contactus" 
+              data-translate="Contact"
+              className="hover:text-green-200"
+              onClick={toggleMenu}
+            >
+              {translate("Contact")}
+            </Link>
+          </div>
+        </div>
+      )}
+    </nav>
 
         
 
@@ -115,7 +227,7 @@ const FarmConnect = () => {
 
 
         {/* Product Categories */}
-        <section id="products" className="container mx-auto px-4 py-16">
+        <section id="/services" className="container mx-auto px-4 py-16">
           <h2 className="text-3xl font-bold text-center mb-12 text-green-900" data-translate="Our Product Categories">
             Our Product Categories
           </h2>
@@ -188,7 +300,7 @@ const FarmConnect = () => {
           <div className="container mx-auto px-4 text-center">
             <div className="flex justify-center space-x-6 mb-6">
               <a href="#home" className="hover:text-green-300" data-translate="Home">Home</a>
-              <a href="#products" className="hover:text-green-300" data-translate="Products">Products</a>
+              <a href="#/services" className="hover:text-green-300" data-translate="/services">/services</a>
               <a href="#about" className="hover:text-green-300" data-translate="About Us">About Us</a>
               <a href="#contact" className="hover:text-green-300" data-translate="Contact">Contact</a>
             </div>
