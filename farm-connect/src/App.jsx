@@ -1,10 +1,9 @@
-
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { auth, db } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import "./index.css"; 
+import "./index.css";
 
 import FarmConnect from "./FarmConnect";
 import AboutUs from "./components/AboutUs";
@@ -17,9 +16,8 @@ import Shop from "./components/Shop";
 import Services from "./components/Services";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-import AddProduct from "./components/AddProduct"; 
-import Products from "./components/Products"; 
-
+import AddProduct from "./components/AddProduct";
+import Products from "./components/Products";
 
 const LoadingScreen = () => {
   return (
@@ -42,7 +40,7 @@ function App() {
       if (currentUser) {
         setUser(currentUser);
         const userDoc = await getDoc(doc(db, "users", currentUser.uid));
-        setUserRole(userDoc.exists() ? userDoc.data().role : null);
+        setUserRole(userDoc.exists() ? userDoc.data().role : "customer");
       } else {
         setUser(null);
         setUserRole(null);
@@ -52,33 +50,27 @@ function App() {
     return () => unsubscribe();
   }, []);
 
-  if (loading) return <LoadingScreen />; 
+  if (loading) return <LoadingScreen />;
 
   return (
     <Router>
       <Routes>
-        {!user ? (
-          <>
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login setUserRole={setUserRole} />} />
-            <Route path="*" element={<Navigate to="/login" />} />
-          </>
-        ) : (
-          <>
-            <Route path="/" element={<FarmConnect />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/LearnMore" element={<LearnMore />} />
-            <Route path="/contactus" element={<ContactUs />} />
-            <Route path="/vegetables" element={<Vegetables />} />
-            <Route path="/fruits" element={<Fruits />} />
-            <Route path="/dairyproducts" element={<Dairy />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/products" element={<Products />} />
-            {userRole === "farmer" && <Route path="/addproduct" element={<AddProduct />} />}
-            <Route path="*" element={<Navigate to="/" />} />
-          </>
+        <Route path="/" element={<FarmConnect />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/LearnMore" element={<LearnMore />} />
+        <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/vegetables" element={<Vegetables />} />
+        <Route path="/fruits" element={<Fruits />} />
+        <Route path="/dairyproducts" element={<Dairy />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        {user && userRole === "farmer" && (
+          <Route path="/addproduct" element={<AddProduct />} />
         )}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

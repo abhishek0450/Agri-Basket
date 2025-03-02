@@ -2,13 +2,14 @@ import { useState } from "react";
 import { auth, db } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("customer"); // Default role
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault(); // Prevent form reload
@@ -16,6 +17,7 @@ const Signup = () => {
     
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      navigate("/");
       const user = userCredential.user;
       
       // Store user role in Firestore

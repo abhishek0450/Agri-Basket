@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 // Sample data for dairy items
 const dairyItems = [
