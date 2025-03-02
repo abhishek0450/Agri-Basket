@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import logo from './assets/vegetables.png';
 import { Languages, Menu, X } from 'lucide-react';
 import { Link, useNavigate } from "react-router-dom";
-import { auth, db } from "./firebase";
+import { auth, db } from "../firebase";
 import { signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 const Products = () => {
@@ -28,7 +28,7 @@ const Products = () => {
             className="bg-white rounded-lg shadow-lg m-4 p-4 w-48 text-center"
           >
             <img
-              src={vegetable.image || "https://via.placeholder.com/150"}
+              src={vegetable.image || "https://placehold.co/150"}
               alt={vegetable.name}
               className="w-full h-32 object-cover rounded-md mb-2"
             />
