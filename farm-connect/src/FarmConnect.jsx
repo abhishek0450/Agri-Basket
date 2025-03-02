@@ -48,7 +48,7 @@ const FarmConnect = () => {
   const [isHindi, setIsHindi] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [userRole, setUserRole] = useState(null);
-  const [loading, setLoading] = useState(true);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const FarmConnect = () => {
         setUserRole(null);
         navigate("/login"); // Redirect to login if not authenticated
       }
-      setLoading(false);
+      
     });
 
     return () => unsubscribe(); // Clean up listener on unmount
@@ -264,7 +264,7 @@ const FarmConnect = () => {
             {translate("Supporting Local Farmers, Delivering Quality Produce")}
           </p>
           <div className="space-x-4 flex justify-center flex-wrap">
-            <Link to="/shop" className="bg-green-600 m-2 border-2 border-green-900 text-white px-8 py-3 rounded-full hover:bg-green-700 transition" data-translate="Shop Now">
+            <Link to="/products" className="bg-green-600 m-2 border-2 border-green-900 text-white px-8 py-3 rounded-full hover:bg-green-700 transition" data-translate="Shop Now">
               {translate("Shop Now")}
             </Link>
             <Link to="/LearnMore" className="bg-white m-2 text-green-600 px-8 py-3 rounded-full border-2 border-green-600 hover:bg-green-100 transition" data-translate="Learn More">

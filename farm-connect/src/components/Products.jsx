@@ -20,7 +20,7 @@ const Products = () => {
 
   return (
     <div className="bg-green-50 p-8 h-full">
-      <h1 className="text-3xl font-bold mb-6 text-center">Vegetable List</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">All Products</h1>
       <div className="flex flex-wrap justify-center">
         {vegetables.map((vegetable) => (
           <div
