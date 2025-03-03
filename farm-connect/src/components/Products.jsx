@@ -34,10 +34,10 @@ const Products = () => {
       },
       product: {
         price: "Wholesale Price",
-        minOrder: "min. order",
+        minOrder: "Min. Order",
         freshness: "Freshness",
         available: "Available",
-        buy: "Buy",
+        buy: "Buy Now",
         per: "per",
         days: "days",
       },
@@ -69,7 +69,7 @@ const Products = () => {
         minOrder: "न्यूनतम ऑर्डर",
         freshness: "ताजगी",
         available: "उपलब्ध",
-        buy: "खरीदें",
+        buy: "अभी खरीदें",
         per: "प्रति",
         days: "दिन",
       },
@@ -127,13 +127,12 @@ const Products = () => {
           <h1 className="text-4xl font-bold text-gray-800 mb-6">
             {text.header.title}
           </h1>
-          
           {/* Filter Options */}
           <div className="mb-6 w-48">
             <select
               value={filter}
               onChange={handleFilterChange}
-              className="border rounded-md p-2 w-full"
+              className="border rounded-md p-2 w-full bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
             >
               <option value="All">{text.filter.all}</option>
               <option value="Vegetables">{text.filter.vegetables}</option>
@@ -145,33 +144,47 @@ const Products = () => {
           </div>
         </header>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+        {/* Enhanced Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-lg shadow-sm p-4 flex flex-col"
+              className="bg-white rounded-xl shadow-md p-5 flex flex-col transition-transform transform hover:shadow-lg hover:-translate-y-1 border border-gray-100"
             >
-              <div className="flex-grow mb-3">
+              {/* Product Image */}
+              <div className="relative">
                 <img
                   src={product.image || "https://placehold.co/150"}
                   alt={product.name}
-                  className="w-full h-32 object-cover rounded-md mb-3"
+                  className="w-full h-40 object-cover rounded-lg mb-4 transition-transform transform hover:scale-105"
                 />
-                <h3 className="text-lg font-semibold text-center mb-2">{product.name}</h3>
-                <div className="text-sm text-center">
-                  <p className="mb-1 text-gray-700">
-                    {text.product.price}: ₹{product.wholesalePrice}
+                {/* Category Badge */}
+                <span className="absolute top-2 left-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                  {product.category}
+                </span>
+              </div>
+
+              {/* Product Info */}
+              <div className="flex-grow">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">
+                  {product.name}
+                </h3>
+                <div className="text-sm text-gray-600 space-y-1">
+                  <p className="text-gray-900 font-medium">
+                    {text.product.price}: <span className="text-green-600">₹{product.wholesalePrice}</span>
                   </p>
-                  <p className="mb-1 text-gray-600">
-                    {text.product.per} {product.unit} ({text.product.minOrder}: {product.minOrder} {product.unit})
+                  <p>
+                    {text.product.per} {product.unit} (
+                    <span className="font-medium">{text.product.minOrder}: {product.minOrder} {product.unit}</span>)
                   </p>
-                  <p className="text-gray-600">
-                    {text.product.freshness}: {product.freshness} {text.product.days}
+                  <p>
+                    {text.product.freshness}: <span className="text-green-600">{product.freshness} {text.product.days}</span>
                   </p>
                 </div>
               </div>
-              <button className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded transition duration-200">
+
+              {/* Action Button */}
+              <button className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-medium transition duration-300 shadow-sm">
                 {text.product.buy}
               </button>
             </div>
