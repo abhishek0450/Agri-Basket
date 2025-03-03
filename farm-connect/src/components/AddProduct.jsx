@@ -6,11 +6,13 @@ import { collection, addDoc } from "firebase/firestore";
 const AddProduct = () => {
   const [language, setLanguage] = useState("en");
   const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
+  const [wholesalePrice, setWholesalePrice] = useState("");
   const [quantity, setQuantity] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [minOrder, setMinOrder] = useState("");
-  const [productType, setProductType] = useState("");
+  const [category, setCategory] = useState("");
+  const [unit, setUnit] = useState("");
+  const [freshness, setFreshness] = useState("");
   const navigate = useNavigate();
 
   const toggleLanguage = () => {
@@ -29,18 +31,21 @@ const AddProduct = () => {
       form: {
         title: "Add Product",
         productName: "Product Name",
-        price: "Price",
+        wholesalePrice: "Wholesale Price (per unit)",
         quantity: "Quantity",
         minOrder: "Minimum Order",
-        productType: "Product Type",
-        selectType: "Select Product Type",
+        category: "Category",
+        selectCategory: "Select Category",
+        unit: "Unit",
+        freshness: "Freshness (days)",
         imageUrl: "Image URL",
         submit: "Add Product",
-        vegetables: "Vegetables",
-        fruits: "Fruits",
         dairy: "Dairy",
-        pulses: "Pulses",
-        seeds: "Seeds",
+        fruits: "Fruits",
+        vegetables: "Vegetables",
+        seeds: "Seeds",    // Added
+        pulses: "Pulses",  // Added
+        others: "Others",  // Added
       },
       footer: {
         copyright: "© 2024 Agri-Basket. All Rights Reserved.",
@@ -57,18 +62,21 @@ const AddProduct = () => {
       form: {
         title: "उत्पाद जोड़ें",
         productName: "उत्पाद का नाम",
-        price: "मूल्य",
+        wholesalePrice: "थोक मूल्य (प्रति इकाई)",
         quantity: "मात्रा",
         minOrder: "न्यूनतम ऑर्डर",
-        productType: "उत्पाद प्रकार",
-        selectType: "उत्पाद प्रकार चुनें",
+        category: "श्रेणी",
+        selectCategory: "श्रेणी चुनें",
+        unit: "इकाई",
+        freshness: "ताजगी (दिन)",
         imageUrl: "छवि URL",
         submit: "उत्पाद जोड़ें",
-        vegetables: "सब्जियाँ",
-        fruits: "फल",
         dairy: "डेयरी",
-        pulses: "दालें",
-        seeds: "बीज",
+        fruits: "फल",
+        vegetables: "सब्जियाँ",
+        seeds: "बीज",      // Added
+        pulses: "दालें",   // Added
+        others: "अन्य",    // Added
       },
       footer: {
         copyright: "© 2024 एग्री-बास्केट। सर्वाधिकार सुरक्षित।",
@@ -94,21 +102,25 @@ const AddProduct = () => {
     try {
       await addDoc(collection(db, "products"), {
         name,
-        price,
-        quantity,
+        category,
+        unit,
+        wholesalePrice,
         minOrder,
+        freshness,
+        quantity,
         image: imageUrl,
-        type: productType,
         farmerId: user.uid,
       });
 
       alert(language === "en" ? "Product Added!" : "उत्पाद जोड़ा गया!");
       setName("");
-      setPrice("");
+      setWholesalePrice("");
       setQuantity("");
       setImageUrl("");
       setMinOrder("");
-      setProductType("");
+      setCategory("");
+      setUnit("");
+      setFreshness("");
     } catch (error) {
       alert(
         language === "en"
@@ -170,34 +182,59 @@ const AddProduct = () => {
             </div>
             <div>
               <label
-                htmlFor="price"
+                htmlFor="category"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
-                {text.form.price}
+                {text.form.category}
+              </label>
+              <select
+                id="category"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              >
+                <option value="" disabled>
+                  {text.form.selectCategory}
+                </option>
+                <option value="Dairy">{text.form.dairy}</option>
+                <option value="Fruits">{text.form.fruits}</option>
+                <option value="Vegetables">{text.form.vegetables}</option>
+                <option value="Seeds">{text.form.seeds}</option>      {/* Added */}
+                <option value="Pulses">{text.form.pulses}</option>    {/* Added */}
+                <option value="Others">{text.form.others}</option>    {/* Added */}
+              </select>
+            </div>
+            <div>
+              <label
+                htmlFor="unit"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                {text.form.unit}
               </label>
               <input
                 type="text"
-                id="price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-                placeholder={text.form.price}
+                id="unit"
+                value={unit}
+                onChange={(e) => setUnit(e.target.value)}
+                placeholder={text.form.unit}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
             </div>
             <div>
               <label
-                htmlFor="quantity"
+                htmlFor="wholesalePrice"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
-                {text.form.quantity}
+                {text.form.wholesalePrice}
               </label>
               <input
                 type="text"
-                id="quantity"
-                value={quantity}
-                onChange={(e) => setQuantity(e.target.value)}
-                placeholder={text.form.quantity}
+                id="wholesalePrice"
+                value={wholesalePrice}
+                onChange={(e) => setWholesalePrice(e.target.value)}
+                placeholder={text.form.wholesalePrice}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
@@ -221,28 +258,22 @@ const AddProduct = () => {
             </div>
             <div>
               <label
-                htmlFor="productType"
+                htmlFor="freshness"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
-                {text.form.productType}
+                {text.form.freshness}
               </label>
-              <select
-                id="productType"
-                value={productType}
-                onChange={(e) => setProductType(e.target.value)}
+              <input
+                type="number"
+                id="freshness"
+                value={freshness}
+                onChange={(e) => setFreshness(e.target.value)}
+                placeholder={text.form.freshness}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              >
-                <option value="" disabled>
-                  {text.form.selectType}
-                </option>
-                <option value="Vegetables">{text.form.vegetables}</option>
-                <option value="Fruits">{text.form.fruits}</option>
-                <option value="Dairy">{text.form.dairy}</option>
-                <option value="Pulses">{text.form.pulses}</option>
-                <option value="Seeds">{text.form.seeds}</option>
-              </select>
+              />
             </div>
+      
             <div>
               <label
                 htmlFor="imageUrl"

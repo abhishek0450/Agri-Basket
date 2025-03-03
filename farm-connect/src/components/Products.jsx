@@ -22,7 +22,7 @@ const Products = () => {
         toggleLang: "हिंदी में पढ़ें",
       },
       header: {
-        title: "All Products",
+        title: "Shop",
       },
       filter: {
         all: "All",
@@ -33,9 +33,13 @@ const Products = () => {
         seeds: "Seeds",
       },
       product: {
-        price: "Price",
-        minOrder: "Min Order",
+        price: "Wholesale Price",
+        minOrder: "min. order",
+        freshness: "Freshness",
+        available: "Available",
         buy: "Buy",
+        per: "per",
+        days: "days",
       },
       footer: {
         copyright: "© 2024 Agri-Basket. All Rights Reserved.",
@@ -50,7 +54,7 @@ const Products = () => {
         toggleLang: "Read in English",
       },
       header: {
-        title: "सभी उत्पाद",
+        title: "दुकान",
       },
       filter: {
         all: "सभी",
@@ -61,9 +65,13 @@ const Products = () => {
         seeds: "बीज",
       },
       product: {
-        price: "मूल्य",
+        price: "थोक मूल्य",
         minOrder: "न्यूनतम ऑर्डर",
+        freshness: "ताजगी",
+        available: "उपलब्ध",
         buy: "खरीदें",
+        per: "प्रति",
+        days: "दिन",
       },
       footer: {
         copyright: "© 2024 एग्री-बास्केट। सर्वाधिकार सुरक्षित।",
@@ -92,7 +100,7 @@ const Products = () => {
 
   const filteredProducts = products.filter((product) => {
     if (filter === "All") return true;
-    return product.type === filter;
+    return product.category === filter;
   });
 
   return (
@@ -100,18 +108,10 @@ const Products = () => {
       {/* Navbar */}
       <nav className="bg-green-600 text-white p-4 shadow-md flex justify-center items-center">
         <div className="flex items-center space-x-6">
-          <Link to="/" className="hover:text-green-200">
-            {text.navbar.home}
-          </Link>
-          <Link to="/about" className="hover:text-green-200">
-            {text.navbar.about}
-          </Link>
-          <Link to="/services" className="hover:text-green-200">
-            {text.navbar.services}
-          </Link>
-          <Link to="/contactus" className="hover:text-green-200">
-            {text.navbar.contact}
-          </Link>
+          <Link to="/" className="hover:text-green-200">{text.navbar.home}</Link>
+          <Link to="/about" className="hover:text-green-200">{text.navbar.about}</Link>
+          <Link to="/services" className="hover:text-green-200">{text.navbar.services}</Link>
+          <Link to="/contactus" className="hover:text-green-200">{text.navbar.contact}</Link>
           <button
             onClick={toggleLanguage}
             className="bg-white text-green-600 px-4 py-2 rounded-md hover:bg-green-100 transition"
@@ -122,49 +122,56 @@ const Products = () => {
       </nav>
 
       {/* Main Content */}
-      <div className="flex-grow">
-        <header className="flex flex-col items-center justify-center text-center py-16 px-8">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-green-800 mb-4">
+      <div className="flex-grow container mx-auto px-4 py-8">
+        <header className="flex flex-col items-center justify-center text-center py-6">
+          <h1 className="text-4xl font-bold text-gray-800 mb-6">
             {text.header.title}
           </h1>
+          
+          {/* Filter Options */}
+          <div className="mb-6 w-48">
+            <select
+              value={filter}
+              onChange={handleFilterChange}
+              className="border rounded-md p-2 w-full"
+            >
+              <option value="All">{text.filter.all}</option>
+              <option value="Vegetables">{text.filter.vegetables}</option>
+              <option value="Fruits">{text.filter.fruits}</option>
+              <option value="Dairy">{text.filter.dairy}</option>
+              <option value="Pulses">{text.filter.pulses}</option>
+              <option value="Seeds">{text.filter.seeds}</option>
+            </select>
+          </div>
         </header>
 
-        {/* Filter Options */}
-        <div className="mb-4 text-center">
-          <select
-            value={filter}
-            onChange={handleFilterChange}
-            className="border rounded-md p-2"
-          >
-            <option value="All">{text.filter.all}</option>
-            <option value="Vegetables">{text.filter.vegetables}</option>
-            <option value="Fruits">{text.filter.fruits}</option>
-            <option value="Dairy">{text.filter.dairy}</option>
-            <option value="Pulses">{text.filter.pulses}</option>
-            <option value="Seeds">{text.filter.seeds}</option>
-          </select>
-        </div>
-
         {/* Products Grid */}
-        <div className="flex flex-wrap justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-lg shadow-lg m-4 p-4 w-48 text-center"
+              className="bg-white rounded-lg shadow-sm p-4 flex flex-col"
             >
-              <img
-                src={product.image || "https://placehold.co/150"}
-                alt={product.name}
-                className="w-full h-32 object-cover rounded-md mb-2"
-              />
-              <h3 className="text-lg font-semibold">{product.name}</h3>
-              <p className="text-gray-700">
-                {text.product.price}: ₹{product.price}
-              </p>
-              <p className="text-gray-700">
-                {text.product.minOrder}: {product.minOrder}
-              </p>
-              <button className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition">
+              <div className="flex-grow mb-3">
+                <img
+                  src={product.image || "https://placehold.co/150"}
+                  alt={product.name}
+                  className="w-full h-32 object-cover rounded-md mb-3"
+                />
+                <h3 className="text-lg font-semibold text-center mb-2">{product.name}</h3>
+                <div className="text-sm text-center">
+                  <p className="mb-1 text-gray-700">
+                    {text.product.price}: ₹{product.wholesalePrice}
+                  </p>
+                  <p className="mb-1 text-gray-600">
+                    {text.product.per} {product.unit} ({text.product.minOrder}: {product.minOrder} {product.unit})
+                  </p>
+                  <p className="text-gray-600">
+                    {text.product.freshness}: {product.freshness} {text.product.days}
+                  </p>
+                </div>
+              </div>
+              <button className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded transition duration-200">
                 {text.product.buy}
               </button>
             </div>
@@ -173,9 +180,15 @@ const Products = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-green-600 text-white p-8">
-        <div className="container mx-auto text-center">
-          <p className="text-sm">{text.footer.copyright}</p>
+      <footer className="bg-green-900 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <div className="flex justify-center space-x-6 mb-6">
+            <Link to="/" className="hover:text-green-300">{text.navbar.home}</Link>
+            <Link to="/about" className="hover:text-green-300">{text.navbar.about}</Link>
+            <Link to="/services" className="hover:text-green-300">{text.navbar.services}</Link>
+            <Link to="/contactus" className="hover:text-green-300">{text.navbar.contact}</Link>
+          </div>
+          <p className="mb-4">{text.footer.copyright}</p>
         </div>
       </footer>
     </div>

@@ -237,108 +237,108 @@ const FarmConnect = () => {
           {translate("Our Product Categories")}
         </h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-            <img
-              src="https://assets.cntraveller.in/photos/60ba23b90f3a5367ec9fe85b/16:9/w_960,c_limit/Farm-fresh-produce-1366x768.jpg"
-              alt="Fresh Fruits"
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-6">
-              <h3
-                className="text-2xl font-bold text-green-800 mb-4"
-                data-translate="Fresh Fruits"
-              >
-                {translate("Fresh Fruits")}
-              </h3>
-              <ul className="space-y-2 text-green-700">
-                <li data-translate="🍎 Fresh Apples - ₹120/kg">
-                  {translate("🍎 Fresh Apples - ₹120/kg")}
-                </li>
-                <li data-translate="🍌 Ripe Bananas - ₹50/kg">
-                  {translate("🍌 Ripe Bananas - ₹50/kg")}
-                </li>
-                <li data-translate="🍊 Juicy Oranges - ₹100/kg">
-                  {translate("🍊 Juicy Oranges - ₹100/kg")}
-                </li>
-              </ul>
-              <Link
-                to="/fruits"
-                className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition"
-                data-translate="View Fruits"
-              >
-                {translate("View Fruits")}
-              </Link>
-            </div>
-          </div>
+  <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+    <img
+      src="https://assets.cntraveller.in/photos/60ba23b90f3a5367ec9fe85b/16:9/w_960,c_limit/Farm-fresh-produce-1366x768.jpg"
+      alt="Fresh Fruits"
+      className="w-full h-64 object-cover"
+    />
+    <div className="p-6">
+      <h3
+        className="text-2xl font-bold text-green-800 mb-4"
+        data-translate="Fresh Fruits"
+      >
+        {translate("Fresh Fruits")}
+      </h3>
+      <ul className="space-y-2 text-green-700">
+        <li data-translate="🍎 Fresh Apples - ₹120/kg (min. 10 kg)">
+          {translate("🍎 Fresh Apples - ₹120/kg (min. 10 kg)")}
+        </li>
+        <li data-translate="🍌 Ripe Bananas - ₹50/kg (min. 10 kg)">
+          {translate("🍌 Ripe Bananas - ₹50/kg (min. 10 kg)")}
+        </li>
+        <li data-translate="🍊 Juicy Oranges - ₹100/kg (min. 10 kg)">
+          {translate("🍊 Juicy Oranges - ₹100/kg (min. 10 kg)")}
+        </li>
+      </ul>
+      <Link
+        to="/fruits"
+        className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition"
+        data-translate="View Fruits"
+      >
+        {translate("View Fruits")}
+      </Link>
+    </div>
+  </div>
 
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-            <img
-              src="https://b3075642.smushcdn.com/3075642/wp-content/uploads/Canva-Farmer-in-sugar-beet-field-1-1536x1024.jpg?lossy=1&strip=1&webp=1"
-              alt="Fresh Vegetables"
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-6">
-              <h3
-                className="text-2xl font-bold text-green-800 mb-4"
-                data-translate="Fresh Vegetables"
-              >
-                {translate("Fresh Vegetables")}
-              </h3>
-              <ul className="space-y-2 text-green-700">
-                <li data-translate="🥕 Crisp Carrots - ₹40/kg">
-                  {translate("🥕 Crisp Carrots - ₹40/kg")}
-                </li>
-                <li data-translate="🥬 Fresh Spinach - ₹20/bundle">
-                  {translate("🥬 Fresh Spinach - ₹20/bundle")}
-                </li>
-                <li data-translate="🍅 Ripe Tomatoes - ₹50/kg">
-                  {translate("🍅 Ripe Tomatoes - ₹50/kg")}
-                </li>
-              </ul>
-              <Link
-                to="/vegetables"
-                className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition"
-                data-translate="View Vegetables"
-              >
-                {translate("View Vegetables")}
-              </Link>
-            </div>
-          </div>
+  <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+    <img
+      src="https://b3075642.smushcdn.com/3075642/wp-content/uploads/Canva-Farmer-in-sugar-beet-field-1-1536x1024.jpg?lossy=1&strip=1&webp=1"
+      alt="Fresh Vegetables"
+      className="w-full h-64 object-cover"
+    />
+    <div className="p-6">
+      <h3
+        className="text-2xl font-bold text-green-800 mb-4"
+        data-translate="Fresh Vegetables"
+      >
+        {translate("Fresh Vegetables")}
+      </h3>
+      <ul className="space-y-2 text-green-700">
+        <li data-translate="🥕 Crisp Carrots - ₹40/kg (min. 10 kg)">
+          {translate("🥕 Crisp Carrots - ₹40/kg (min. 10 kg)")}
+        </li>
+        <li data-translate="🥬 Fresh Spinach - ₹20/bundle (min. 20 bundles)">
+          {translate("🥬 Fresh Spinach - ₹20/bundle (min. 20 bundles)")}
+        </li>
+        <li data-translate="🍅 Ripe Tomatoes - ₹50/kg (min. 10 kg)">
+          {translate("🍅 Ripe Tomatoes - ₹50/kg (min. 10 kg)")}
+        </li>
+      </ul>
+      <Link
+        to="/vegetables"
+        className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition"
+        data-translate="View Vegetables"
+      >
+        {translate("View Vegetables")}
+      </Link>
+    </div>
+  </div>
 
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-            <img
-              src="https://media.istockphoto.com/id/652550482/photo/portrait-of-buffalo-shepherd.jpg?s=612x612&w=0&k=20&c=Rir8MHClROhkO9JhQ62BaBBtk7gf5Tv2eEltLApJWks="
-              alt="Farm Fresh Dairy"
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-6">
-              <h3
-                className="text-2xl font-bold text-green-800 mb-4"
-                data-translate="Farm Fresh Dairy"
-              >
-                {translate("Farm Fresh Dairy")}
-              </h3>
-              <ul className="space-y-2 text-green-700">
-                <li data-translate="🥛 Raw Milk - ₹40/liter">
-                  {translate("🥛 Raw Milk - ₹40/liter")}
-                </li>
-                <li data-translate="🧀 Artisan Cheese - ₹30/pack">
-                  {translate("🧀 Artisan Cheese - ₹30/pack")}
-                </li>
-                <li data-translate="🥣 Fresh Yogurt - ₹40/jar">
-                  {translate("🥣 Fresh Yogurt - ₹40/jar")}
-                </li>
-              </ul>
-              <Link
-                to="/dairyproducts"
-                className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition"
-                data-translate="View Dairy"
-              >
-                {translate("View Dairy")}
-              </Link>
-            </div>
-          </div>
-        </div>
+  <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+    <img
+      src="https://media.istockphoto.com/id/652550482/photo/portrait-of-buffalo-shepherd.jpg?s=612x612&w=0&k=20&c=Rir8MHClROhkO9JhQ62BaBBtk7gf5Tv2eEltLApJWks="
+      alt="Farm Fresh Dairy"
+      className="w-full h-64 object-cover"
+    />
+    <div className="p-6">
+      <h3
+        className="text-2xl font-bold text-green-800 mb-4"
+        data-translate="Farm Fresh Dairy"
+      >
+        {translate("Farm Fresh Dairy")}
+      </h3>
+      <ul className="space-y-2 text-green-700">
+        <li data-translate="🥛 Raw Milk - ₹40/liter (min. 100 liters)">
+          {translate("🥛 Raw Milk - ₹40/liter (min. 100 liters)")}
+        </li>
+        <li data-translate="🧀 Artisan Cheese - ₹30/pack (min. 20 packs)">
+          {translate("🧀 Artisan Cheese - ₹30/pack (min. 20 packs)")}
+        </li>
+        <li data-translate="🥣 Fresh Yogurt - ₹40/jar (min. 20 jars)">
+          {translate("🥣 Fresh Yogurt - ₹40/jar (min. 20 jars)")}
+        </li>
+      </ul>
+      <Link
+        to="/dairyproducts"
+        className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition"
+        data-translate="View Dairy"
+      >
+        {translate("View Dairy")}
+      </Link>
+    </div>
+  </div>
+</div>
       </section>
 
       <footer className="bg-green-900 text-white py-8">
