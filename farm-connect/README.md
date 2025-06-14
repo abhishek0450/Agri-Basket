@@ -1,8 +1,41 @@
-# React + Vite
+# 🛒 Agri Basket – Farm-to-Consumer Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Empowering local farmers by removing middlemen and connecting them directly with consumers.
 
-Currently, two official plugins are available:
+## 🔧 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React.js  
+- **Backend/Database**: Firebase Firestore  
+- **Authentication**: Firebase Auth  
+
+## 🚀 Features
+
+- **Role-Based Access**  
+  - Farmers: Add/manage inventory, track sales  
+  - Consumers: Browse and purchase produce  
+
+- **Real-Time Database**  
+  - Live inventory tracking and instant UI updates using Firestore  
+
+- **Secure Auth**  
+  - Firebase Authentication with user role separation  
+
+- **Responsive UI**  
+  - Mobile-first and optimized workflows for both farmers and consumers  
+
+## 🛠️ Status
+
+✅ **Completed (MVP)** – Ready for demo and functional usage.
+
+## 🧩 Future Plans
+
+- 🛒 **Cart Functionality**  
+  Add an intuitive shopping cart experience allowing consumers to add multiple products before checkout.
+
+- 💳 **Razorpay Integration**  
+  Integrate Razorpay for secure and seamless payment processing during order checkout.
+
+
+
+---
+

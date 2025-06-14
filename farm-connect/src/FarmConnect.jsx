@@ -236,7 +236,7 @@ const FarmConnect = () => {
         >
           {translate("Our Product Categories")}
         </h2>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
     <img
       src="https://assets.cntraveller.in/photos/60ba23b90f3a5367ec9fe85b/16:9/w_960,c_limit/Farm-fresh-produce-1366x768.jpg"
