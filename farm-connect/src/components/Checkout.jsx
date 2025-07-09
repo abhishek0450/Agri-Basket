@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/Vegetables.png";
+import Logo from "../assets/vegetables.png";
 import { Languages, Menu, X } from "lucide-react";
 import { auth, db } from "../../firebase";
 import { signOut } from "firebase/auth";
