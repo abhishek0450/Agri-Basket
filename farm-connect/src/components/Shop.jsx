@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Shop = () => {
-  // Updated items array with wholesale pricing
+  
   const items = [
     {
       id: 1,
