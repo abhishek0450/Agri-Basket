@@ -43,9 +43,9 @@ const AddProduct = () => {
         dairy: "Dairy",
         fruits: "Fruits",
         vegetables: "Vegetables",
-        seeds: "Seeds",    // Added
-        pulses: "Pulses",  // Added
-        others: "Others",  // Added
+        seeds: "Seeds",    
+        pulses: "Pulses",  
+        others: "Others",  
       },
       footer: {
         copyright: "© 2024 Agri-Basket. All Rights Reserved.",
@@ -74,9 +74,9 @@ const AddProduct = () => {
         dairy: "डेयरी",
         fruits: "फल",
         vegetables: "सब्जियाँ",
-        seeds: "बीज",      // Added
-        pulses: "दालें",   // Added
-        others: "अन्य",    // Added
+        seeds: "बीज",      
+        pulses: "दालें",   
+        others: "अन्य",    
       },
       footer: {
         copyright: "© 2024 एग्री-बास्केट। सर्वाधिकार सुरक्षित।",

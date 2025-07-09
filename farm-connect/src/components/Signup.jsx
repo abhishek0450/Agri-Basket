@@ -7,12 +7,12 @@ import { Link , useNavigate } from "react-router-dom";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("customer"); // Default role
+  const [role, setRole] = useState("customer"); 
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
-    e.preventDefault(); // Prevent form reload
+    e.preventDefault(); 
     setLoading(true);
     
     try {

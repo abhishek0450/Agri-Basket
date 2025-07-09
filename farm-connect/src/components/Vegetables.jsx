@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 // Sample data for vegetables
 const vegetables = [
