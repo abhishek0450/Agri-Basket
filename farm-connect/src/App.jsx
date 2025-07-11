@@ -19,6 +19,7 @@ import Login from "./components/Login";
 import AddProduct from "./components/AddProduct";
 import Products from "./components/Products";
 import Checkout from "./components/Checkout";
+import ProductDetails from "./components/ProductDetails";
 
 const LoadingScreen = () => {
   return (
@@ -69,6 +70,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+
         {user && userRole === "farmer" && (
           <Route path="/addproduct" element={<AddProduct />} />
         )}

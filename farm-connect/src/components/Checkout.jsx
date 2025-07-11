@@ -156,13 +156,15 @@ const Checkout = () => {
               />
               <input
                 name="phone"
+                type="number"
                 value={form.phone}
                 onChange={handleChange}
                 placeholder="Phone Number"
                 className="w-full p-2 border rounded mb-3"
               />
               <div className="flex gap-4 mb-3">
-                <input
+                <input type="number"
+                  
                   name="pincode"
                   value={form.pincode}
                   onChange={handleChange}

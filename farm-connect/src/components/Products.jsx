@@ -18,10 +18,6 @@ const Products = () => {
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
-  const toggleLanguage = () => {
-    setLanguage((prevLang) => (prevLang === "en" ? "hi" : "en"));
-  };
-
   const toggleMobileCart = () => {
     setShowMobileCart(!showMobileCart);
   };
@@ -49,6 +45,10 @@ const Products = () => {
     });
   };
 
+  // Translation
+  const toggleLanguage = () => {
+    setLanguage((prevLang) => (prevLang === "en" ? "hi" : "en"));
+  };
   const content = {
     en: {
       navbar: {
@@ -119,7 +119,6 @@ const Products = () => {
       },
     },
   };
-
   const text = content[language];
 
   useEffect(() => {
@@ -273,11 +272,13 @@ const Products = () => {
          
           <div className={`grid gap-6 flex-grow ${cart.length > 0 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}`}>
             {filteredProducts.map((product) => (
+             
               <div
                 key={product.id}
-                className="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 flex flex-col transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group"
+                className="bg-white rounded-2xl shadow-md hover:shadow-xl p-6 flex flex-col transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group "
               >
-                <div className="relative overflow-hidden rounded-xl mb-4">
+                 <Link to={`/product/${product.id}`} className="block">
+                <div className="relative overflow-hidden rounded-xl mb-4" onClick={() => console.log(`Clicked on product ${product.name}`)}>
                   <img
                     src={product.image || "https://placehold.co/300x200"}
                     alt={product.name}
@@ -296,6 +297,7 @@ const Products = () => {
                   <h3 className="text-xl font-bold text-gray-800 mb-3 text-center group-hover:text-green-600 transition-colors">
                     {product.name}
                   </h3>
+                
                   
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex justify-between items-center bg-green-50 rounded-lg p-2">
@@ -317,7 +319,10 @@ const Products = () => {
                       </span>
                     </div>
                   </div>
+                  
                 </div>
+                </Link>
+                
                 
                 <button
                   className="mt-6 w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-3 rounded-xl font-bold transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg"
@@ -326,6 +331,7 @@ const Products = () => {
                   {text.product.buy}
                 </button>
               </div>
+              
             ))}
           </div>
 
