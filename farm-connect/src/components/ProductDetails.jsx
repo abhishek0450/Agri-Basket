@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db, auth } from "../../firebase";
 import { ArrowLeft, ShoppingCart, Star, Truck, Shield, Clock, Award, Phone, Check } from "lucide-react";
+import toast from "react-hot-toast";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -44,8 +46,15 @@ const ProductDetail = () => {
 
   // Handle add to cart button click
   const handleAddToCart = () => {
+    if (!auth.currentUser) {
+      toast.error("Please login to add items to cart");
+      navigate("/login");
+      return;
+    }
+
     if (product) {
       addToCart(product, quantity);
+      toast.success("Added to cart!");
     }
   };
 

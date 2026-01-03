@@ -1,5 +1,3 @@
-
-
 // Sample data for dairy items
 const dairyItems = [
   {
@@ -26,29 +24,31 @@ const dairyItems = [
   
 ];
 
-const Diary = () => {
+const Dairy = () => {
   return (
-    <div className="bg-green-50 p-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Dairy Products List</h1>
-      <div className="flex flex-wrap justify-center">
-        {dairyItems.map((item) => (
-          <div
-            key={item.id}
-            className="bg-white rounded-lg shadow-lg m-4 p-4 w-48 text-center"
-          >
-            <img
-              src={item.image}
-              alt={item.name}
-              className="w-full h-32 object-cover rounded-md mb-2"
-            />
-            <h3 className="text-lg font-semibold">{item.name}</h3>
-            <p className="text-gray-700">Price: {item.price}</p>
-            <p className="text-gray-700">Freshness: {item.freshness} days</p>
-          </div>
-        ))}
+    <div className="bg-green-50 min-h-screen">
+      <div className="p-8">
+        <h1 className="text-3xl font-bold mb-6 text-center">Dairy Products List</h1>
+        <div className="flex flex-wrap justify-center">
+          {dairyItems.map((item) => (
+            <div
+              key={item.id}
+              className="bg-white rounded-lg shadow-lg m-4 p-4 w-48 text-center"
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-32 object-cover rounded-md mb-2"
+              />
+              <h3 className="text-lg font-semibold">{item.name}</h3>
+              <p className="text-gray-700">Price: {item.price}</p>
+              <p className="text-gray-700">Freshness: {item.freshness} days</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Diary;
+export default Dairy;

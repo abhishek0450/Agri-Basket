@@ -1,10 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { auth, db } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
+import { Toaster } from "react-hot-toast";
 import "./index.css";
 
+import Header from "./components/Header";
 import FarmConnect from "./FarmConnect";
 import AboutUs from "./components/AboutUs";
 import LearnMore from "./components/LearnMore";
@@ -20,6 +22,13 @@ import AddProduct from "./components/AddProduct";
 import Products from "./components/Products";
 import Checkout from "./components/Checkout";
 import ProductDetails from "./components/ProductDetails";
+
+const HeaderWrapper = ({ userRole }) => {
+  const location = useLocation();
+  // const noHeaderPaths = ["/login", "/signup"];
+  // if (noHeaderPaths.includes(location.pathname)) return null;
+  return <Header userRole={userRole} />;
+};
 
 const LoadingScreen = () => {
   return (
@@ -56,6 +65,8 @@ function App() {
 
   return (
     <Router>
+      <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
+      <HeaderWrapper userRole={userRole} />
       <Routes>
         <Route path="/" element={<FarmConnect />} />
         <Route path="/about" element={<AboutUs />} />

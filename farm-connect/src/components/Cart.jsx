@@ -1,10 +1,10 @@
 import { useState } from "react";
-
-import { Link } from "react-router-dom"; 
-
+import { Link, useNavigate } from "react-router-dom"; 
+import toast from "react-hot-toast";
+import { auth } from "../../firebase";
 
 const Cart = ({ cart, setCart }) => {
-  const [toast, setToast] = useState(null);
+  const navigate = useNavigate();
 
   if (cart.length === 0) return null;
 
@@ -36,8 +36,7 @@ const Cart = ({ cart, setCart }) => {
     if (confirmed) {
       const updatedCart = cart.filter((item) => item.id !== id);
       updateCart(updatedCart);
-      setToast("Item removed from cart");
-      setTimeout(() => setToast(null), 2000);
+      toast.success("Item removed from cart");
     }
   };
 
@@ -49,12 +48,6 @@ const Cart = ({ cart, setCart }) => {
   return (
     <div className="w-80 bg-white shadow-md rounded-lg p-6 h-fit sticky top-28 self-start border border-green-200">
       <h2 className="text-xl font-bold mb-4 text-green-700">🛒 Cart</h2>
-
-      {toast && (
-        <div className="bg-green-100 text-green-700 text-sm px-4 py-2 rounded mb-4">
-          {toast}
-        </div>
-      )}
 
       <ul className="divide-y text-sm">
         {cart.map((item) => (
@@ -99,12 +92,19 @@ const Cart = ({ cart, setCart }) => {
   Total: ₹{total}
 </div>
 
-<Link
-  to="/checkout"
-  className="block mt-4 text-center bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-medium transition"
+<button
+  onClick={() => {
+    if (!auth.currentUser) {
+      toast.error("Please login to checkout");
+      navigate("/login");
+    } else {
+      navigate("/checkout");
+    }
+  }}
+  className="block w-full mt-4 text-center bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-medium transition"
 >
   Proceed to Checkout
-</Link>
+</button>
 
     </div>
   );

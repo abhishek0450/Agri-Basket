@@ -3,6 +3,7 @@ import { auth, db } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { Link , useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -26,12 +27,12 @@ const Signup = () => {
         role: role, // Store the selected role
       });
       
-      alert("Signup Successful!");
+      toast.success("Signup Successful!");
       setEmail("");
       setPassword("");
     } catch (error) {
       console.error("Error during signup:", error);
-      alert(error.message);
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }

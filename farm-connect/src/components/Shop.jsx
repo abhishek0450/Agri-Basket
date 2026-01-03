@@ -109,47 +109,48 @@ const Shop = () => {
   });
 
   return (
-    <div className="bg-green-50 p-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Shop</h1>
-      
-      {/* Filter Options */}
-      <div className="mb-4 text-center">
-        <select
-          value={filter}
-          onChange={handleFilterChange}
-          className="border rounded-md p-2"
-        >
-          <option value="All">All</option>
-          <option value="Fruits">Fruits</option>
-          <option value="Vegetables">Vegetables</option>
-          <option value="Dairy">Dairy</option>
-        </select>
-      </div>
-
-      <div className="flex flex-wrap justify-center">
-        {filteredItems.map((item) => (
-          <div
-            key={item.id}
-            className="bg-white rounded-lg shadow-lg m-4 p-4 w-48 text-center"
+    <div className="bg-green-50 min-h-screen">
+      <div className="p-8">
+        <h1 className="text-3xl font-bold mb-6 text-center">Shop</h1>
+        
+        {/* Filter Options */}
+        <div className="mb-4 text-center">
+          <select
+            value={filter}
+            onChange={handleFilterChange}
+            className="border rounded-md p-2"
           >
-            <img
-              src={item.image}
-              alt={item.name}
-              className="w-full h-32 object-cover rounded-md mb-2"
-            />
-            <h3 className="text-lg font-semibold">{item.name}</h3>
-            <p className="text-gray-700">
-              Wholesale Price: ₹{item.wholesalePrice} per {item.unit} (min. order: {item.minOrder} {item.unit}s)
-            </p>
-            <p className="text-gray-700">Freshness: {item.freshness} days</p>
-            <button
-              className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition"
-              data-translate="View Fruits"
+            <option value="All">All</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Dairy">Dairy</option>
+          </select>
+        </div>
+
+        <div className="flex flex-wrap justify-center">
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              className="bg-white rounded-lg shadow-lg m-4 p-4 w-48 text-center"
             >
-              Buy
-            </button>
-          </div>
-        ))}
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-32 object-cover rounded-md mb-2"
+              />
+              <h3 className="text-lg font-semibold">{item.name}</h3>
+              <p className="text-gray-700">
+                Wholesale Price: ₹{item.wholesalePrice} per {item.unit} (min. order: {item.minOrder} {item.unit}s)
+              </p>
+              <p className="text-gray-700">Freshness: {item.freshness} days</p>
+              <button
+                className="mt-6 block text-center w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition"
+              >
+                Buy
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
